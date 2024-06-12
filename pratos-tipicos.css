@@ -22,3 +22,21 @@ h3 {
 #pratos-tipicos img {
     border-radius: 10px;
 }
+
+.receita-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+}
