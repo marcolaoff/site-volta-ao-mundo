@@ -6,6 +6,7 @@
     <link rel="icon" href="galeria de fotos/bandeira.jpg">
     <title>Itália - Página Inicial</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="pontosturisticos.css">
 </head>
 <body>
     <header>
@@ -36,16 +37,277 @@
                 </ul>
             </div>
         </nav>
+        
     </header>
     
-    <main>
-        <div class="container m-5">
-            <!-- Conteúdo da página inicial -->
-            <h1>Bem-vindo à Itália</h1>
-            <p>Prepare-se para uma jornada inesquecível pela Itália, uma terra repleta de história, cultura vibrante e gastronomia de tirar o fôlego. Situada no coração do Mediterrâneo, a Itália cativa seus visitantes com paisagens deslumbrantes, desde as majestosas montanhas dos Alpes até as pitorescas praias da Costa Amalfitana.</p>
-            <p>Ao explorar este país encantador, você será imerso em uma rica tapeçaria cultural, onde a antiga arquitetura romana se mistura com as obras-primas renascentistas e as charmosas vilas à beira do mar. Passeie pelas ruas de Roma e sinta a grandiosidade do Coliseu, maravilhe-se com a elegância de Florença e mergulhe na história em cada esquina de Veneza.</p>
-            <a href="pratos-tipicos.html" class="btn btn-primary">Conheça os pratos típicos</a> 
+    
+    <main class="container my-5">
+        <section id="destinos">
+            <h2 class="text-center mb-4">Destinos Emblemáticos</h2>
+
+                       <!-- Carrossel para Roma -->
+                       <div class="city-carousel mb-5">
+                        <h3>Roma</h3>
+                        <div id="romaCarrossel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#romaCarrossel" data-slide-to="0" class="active"></li>
+                                <li data-target="#romaCarrossel" data-slide-to="1"></li>
+                                <li data-target="#romaCarrossel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="galeria de fotos/roma .jpeg"d-block w-100" alt="Coliseu">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Coliseu</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Coliseu</h3>
+                                        <p>O Coliseu, também conhecido como Anfiteatro Flaviano, é um dos monumentos mais icônicos da Roma Antiga. Construído entre 70 e 80 d.C., ele podia acomodar cerca de 50.000 a 80.000 espectadores. Originalmente, foi utilizado para gladiadores e espetáculos públicos, como simulações de batalhas marítimas, caças de animais e execuções. Uma curiosidade interessante é que o Coliseu tinha um sistema complexo de alçapões e elevadores que permitiam a entrada repentina de animais e gladiadores na arena. Além disso, uma parte do seu nome original, "Coliseu", deriva da estátua colossal do imperador Nero que ficava nas proximidades.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="galeria de fotos/vaticano.jpeg" class="d-block w-100" alt="Vaticano">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Vaticano</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Vaticano</h3>
+                                        <p>O Vaticano, oficialmente conhecido como Cidade do Vaticano, é o menor país do mundo tanto em área quanto em população. É a sede da Igreja Católica e a residência oficial do Papa. Uma das curiosidades mais notáveis é que o Vaticano possui sua própria guarda militar, a Guarda Suíça, conhecida por suas coloridas vestimentas renascentistas. Além disso, o Vaticano possui uma das maiores coleções de arte do mundo, incluindo a Capela Sistina, famosa pelo teto pintado por Michelangelo. Outra curiosidade fascinante é que o Vaticano tem seu próprio serviço postal, emitindo selos que são altamente colecionáveis.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="galeria de fotos/fontana di trevi.jpeg" class="d-block w-100" alt="Fontana di Trevi">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Fontana di Trevi</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Fontana di Trevi</h3>
+                                        <p>A Fontana di Trevi é a maior e uma das mais famosas fontes de Roma, concluída em 1762. Uma das curiosidades mais conhecidas é a tradição de jogar uma moeda na fonte. Diz-se que jogar uma moeda com a mão direita sobre o ombro esquerdo garante que você retornará a Roma. Anualmente, cerca de 1,4 milhão de euros são coletados da fonte e doados para caridade. A Fontana di Trevi foi também cenário de diversas produções cinematográficas, incluindo o famoso filme "La Dolce Vita" de Federico Fellini. Outra curiosidade interessante é que a água que alimenta a fonte vem de um dos aquedutos mais antigos de Roma, o Aqua Virgo, que foi construído em 19 a.C.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#romaCarrossel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#romaCarrossel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                       <!-- Carrossel para Florença -->
+                       <div class="city-carousel mb-5">
+                        <h3>Florença</h3>
+                        <div id="florencaCarrossel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#florencaCarrossel" data-slide-to="0" class="active"></li>
+                                <li data-target="#florencaCarrossel" data-slide-to="1"></li>
+                                <li data-target="#florencaCarrossel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Catedral de Santa Maria del Fiore">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Catedral de Santa Maria del Fiore</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Catedral de Santa Maria del Fiore</h3>
+                                        <p>A Catedral de Santa Maria del Fiore, conhecida como Duomo de Florença, é uma das obras-primas da arquitetura gótica e renascentista. Iniciada em 1296 e concluída em 1436, a catedral é famosa por sua imensa cúpula projetada por Filippo Brunelleschi. Esta cúpula é a maior cúpula de alvenaria já construída e foi um feito de engenharia impressionante na época. A cúpula é adornada com afrescos de Giorgio Vasari e Federico Zuccari que retratam o Juízo Final. Outra curiosidade é que a fachada da catedral, feita de mármore policromático nas cores verde, rosa e branco, é uma das mais belas da arquitetura gótica.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Ponte Vecchio">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Ponte Vecchio</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Ponte Vecchio</h3>
+                                        <p>A Ponte Vecchio é uma das pontes mais icônicas e históricas de Florença. Construída em 1345, é famosa por suas lojas ao longo de toda a extensão da ponte. Originalmente, essas lojas eram ocupadas por açougueiros, mas em 1593, a pedido de Fernando I de Médici, foram substituídas por joalheiros e ourives para melhorar a higiene e a imagem da ponte. Uma curiosidade notável é que a Ponte Vecchio foi a única ponte em Florença que não foi destruída pelos alemães durante a Segunda Guerra Mundial, supostamente por ordens diretas de Adolf Hitler, que ficou impressionado com sua beleza.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Galeria Uffizi">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Galeria Uffizi</p>
+                                    </div>
+                                    <div class="curiosidade">
+                                        <h3>Galeria Uffizi</h3>
+                                        <p>A Galeria Uffizi é um dos museus mais importantes e visitados do mundo, abrigando uma vasta coleção de obras de arte renascentistas. Fundada em 1581 por Francesco I de Médici, o edifício foi originalmente projetado por Giorgio Vasari para abrigar os escritórios administrativos e judiciais de Florença. Uma curiosidade interessante é que o termo "Uffizi" significa "escritórios" em italiano. O museu é famoso por sua coleção de obras-primas de artistas como Leonardo da Vinci, Michelangelo, Botticelli e Rafael. Além disso, o edifício possui um corredor secreto, o Corredor Vasariano, que conecta a Galeria Uffizi ao Palácio Pitti, permitindo que a família Médici se movesse entre suas residências sem ser vista.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#florencaCarrossel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#florencaCarrossel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </div>
+                    </div>
+        
+
+            <!-- Carrossel para Veneza -->
+            <div class="city-carousel mb-5">
+                <h3>Veneza</h3>
+                <div id="venezaCarrossel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#venezaCarrossel" data-slide-to="0" class="active"></li>
+                        <li data-target="#venezaCarrossel" data-slide-to="1"></li>
+                        <li data-target="#venezaCarrossel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Praça de São Marcos">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Praça de São Marcos</p>
+                            </div>
+                            <div class="curiosidade">
+                                <h3>Praça de São Marcos</h3>
+                                <p>A Praça de São Marcos é o principal ponto turístico de Veneza e uma das praças mais famosas do mundo. Conhecida como "La Piazza" pelos venezianos, é o único espaço urbano de Veneza a ser chamado de "praça", enquanto os outros são chamados de "campos". Uma das curiosidades mais notáveis é que a praça frequentemente sofre inundações, conhecidas como "acqua alta", devido ao aumento do nível da água no inverno. A Basílica de São Marcos, situada na praça, é famosa por seu interior ricamente decorado com mosaicos dourados. Outro ponto interessante é que a Torre do Relógio, que fica na praça, possui um relógio astronômico que mostra não apenas a hora, mas também as fases da lua e os signos do zodíaco.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Grande Canal">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Grande Canal</p>
+                            </div>
+                            <div class="curiosidade">
+                                <h3>Grande Canal</h3>
+                                <p>O Grande Canal é a principal via navegável de Veneza, serpenteando através da cidade em um grande "S" invertido. Com cerca de 3,8 km de comprimento, divide Veneza em duas partes e é atravessado por quatro pontes principais, incluindo a famosa Ponte Rialto. Uma curiosidade fascinante é que o Grande Canal é ladeado por mais de 170 edifícios antigos, a maioria dos quais data do século XIII ao XVIII. Estes edifícios exibem uma rica mistura de estilos arquitetônicos, desde o gótico veneziano até o renascentista e o barroco. Além disso, o canal era a principal rota de transporte e comércio durante a era de ouro de Veneza, sendo usado por comerciantes para transportar mercadorias.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Ponte Rialto">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Ponte Rialto</p>
+                            </div>
+                            <div class="curiosidade">
+                                <h3>Ponte Rialto</h3>
+                                <p>A Ponte Rialto é a mais antiga das quatro pontes que cruzam o Grande Canal e uma das mais icônicas de Veneza. Originalmente construída como uma ponte de madeira em 1181, a estrutura atual de pedra foi concluída em 1591. Uma curiosidade interessante é que a construção da ponte de pedra foi considerada um feito de engenharia arrojado na época, e muitos acreditavam que ela desabaria devido ao seu design audacioso. A ponte possui lojas ao longo de ambos os lados, que originalmente eram ocupadas por comerciantes de especiarias e mercadorias preciosas. Hoje, essas lojas são principalmente de joias e souvenirs. Além disso, a Ponte Rialto oferece vistas espetaculares do Grande Canal, tornando-se um ponto popular para fotografias.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#venezaCarrossel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#venezaCarrossel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </div>
+
+             <!-- Carrossel para Milão -->
+    <div class="city-carousel mb-5">
+        <h3>Milão</h3>
+        <div id="milaoCarrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#milaoCarrossel" data-slide-to="0" class="active"></li>
+                <li data-target="#milaoCarrossel" data-slide-to="1"></li>
+                <li data-target="#milaoCarrossel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Catedral de Milão">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Catedral de Milão</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>Catedral de Milão</h3>
+                        <p>A Catedral de Milão, conhecida como Duomo di Milano, é uma das maiores e mais impressionantes catedrais góticas do mundo. Sua construção começou em 1386 e levou quase seis séculos para ser concluída, com a finalização oficial ocorrendo em 1965. Uma das curiosidades mais notáveis é que a catedral possui mais de 3.400 estátuas, 135 gárgulas e 700 figuras em sua fachada. No topo da catedral está a famosa estátua dourada da Madonnina, que se tornou um símbolo de Milão. Outra curiosidade interessante é que o teto da catedral pode ser visitado, oferecendo vistas panorâmicas espetaculares da cidade e dos Alpes nos dias claros.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Galeria Vittorio Emanuele II">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Galeria Vittorio Emanuele II</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>Galeria Vittorio Emanuele II</h3>
+                        <p>A Galeria Vittorio Emanuele II é um dos centros comerciais mais antigos e famosos do mundo, inaugurado em 1877. Localizada no coração de Milão, a galeria conecta a Piazza del Duomo com a Piazza della Scala. Uma curiosidade interessante é que a galeria foi projetada por Giuseppe Mengoni, que infelizmente morreu tragicamente ao cair de um andaime apenas alguns dias antes da inauguração. A galeria é famosa por seu design arquitetônico deslumbrante, com um telhado abobadado de vidro e ferro e pisos de mosaico que representam os brasões das principais cidades italianas. A Galeria Vittorio Emanuele II é frequentemente chamada de "il Salotto di Milano" (a sala de estar de Milão) devido à sua importância como ponto de encontro social e cultural.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="A Última Ceia de Leonardo da Vinci">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>A Última Ceia de Leonardo da Vinci</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>A Última Ceia de Leonardo da Vinci</h3>
+                        <p>A Última Ceia (Cenacolo Vinciano) é uma das obras de arte mais famosas e reverenciadas do mundo, pintada por Leonardo da Vinci entre 1495 e 1498. Localizada no refeitório do convento de Santa Maria delle Grazie em Milão, a pintura retrata o momento dramático em que Jesus anuncia que um de seus discípulos irá traí-lo. Uma das curiosidades mais intrigantes é que Leonardo usou uma técnica experimental para a pintura, aplicando tinta sobre uma base seca em vez de usar a técnica tradicional de afresco. Isso resultou em problemas de deterioração ao longo do tempo, exigindo numerosos esforços de restauração. Além disso, a pintura sobreviveu a bombardeios durante a Segunda Guerra Mundial, que destruíram grande parte do convento, mas milagrosamente pouparam a parede onde a obra estava.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#milaoCarrossel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#milaoCarrossel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
         </div>
+    </div>
+
+             <!-- Carrossel para Nápoles -->
+    <div class="city-carousel mb-5">
+        <h3>Nápoles</h3>
+        <div id="napolesCarrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#napolesCarrossel" data-slide-to="0" class="active"></li>
+                <li data-target="#napolesCarrossel" data-slide-to="1"></li>
+                <li data-target="#napolesCarrossel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Monte Vesúvio">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Monte Vesúvio</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>Monte Vesúvio</h3>
+                        <p>O Monte Vesúvio é um dos vulcões mais famosos e perigosos do mundo, localizado na costa oeste da Itália, próximo à cidade de Nápoles. A erupção mais célebre do Vesúvio ocorreu em 79 d.C., quando cobriu as cidades romanas de Pompeia e Herculano com cinzas e lava, preservando-as quase intactas por séculos. Uma curiosidade interessante é que o Vesúvio é o único vulcão ativo na Europa continental e teve mais de 30 erupções significativas desde a famosa erupção de 79 d.C. Hoje, o Vesúvio é um destino turístico popular, oferecendo trilhas para caminhadas que levam até a borda da cratera, proporcionando vistas espetaculares da Baía de Nápoles e da paisagem circundante.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Ruínas de Pompeia">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Ruínas de Pompeia</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>Ruínas de Pompeia</h3>
+                        <p>As Ruínas de Pompeia são um dos sítios arqueológicos mais importantes e fascinantes do mundo. A cidade romana foi soterrada pela erupção do Monte Vesúvio em 79 d.C., preservando edifícios, artefatos e até mesmo os moldes dos corpos dos habitantes em sua última posição. As escavações, que começaram no século XVIII, revelaram uma cidade próspera com casas, templos, teatros, banhos públicos e mercados. Uma curiosidade notável é que muitos dos afrescos e mosaicos encontrados em Pompeia ainda mantêm suas cores vibrantes, oferecendo um vislumbre da vida cotidiana na Roma Antiga. A cidade é Patrimônio Mundial da UNESCO e continua a atrair milhões de visitantes todos os anos.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Centro Histórico de Nápoles">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Centro Histórico de Nápoles</p>
+                    </div>
+                    <div class="curiosidade">
+                        <h3>Centro Histórico de Nápoles</h3>
+                        <p>O Centro Histórico de Nápoles é um dos maiores e mais antigos centros históricos da Europa, com uma história que remonta a quase 3.000 anos. Este labirinto de ruas estreitas e praças vibrantes está repleto de igrejas, palácios, monumentos e catacumbas que testemunham a rica herança cultural da cidade. Uma curiosidade fascinante é que o centro histórico abriga a maior concentração de igrejas históricas do mundo, incluindo a impressionante Catedral de Nápoles e a Capela de Sansevero, conhecida por sua escultura "Cristo Velado". Em 1995, o Centro Histórico de Nápoles foi declarado Patrimônio Mundial da UNESCO devido à sua importância histórica e cultural. Além disso, Nápoles é famosa por ser o berço da pizza, e você encontrará algumas das melhores pizzarias do mundo nas suas ruas.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#napolesCarrossel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#napolesCarrossel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </div>
+
+        </section>
     </main>
 
     <footer class="bg-dark text-light py-3">

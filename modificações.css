@@ -30,3 +30,13 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+
+.carousel-inner img {
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
