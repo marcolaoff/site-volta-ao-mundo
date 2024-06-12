@@ -21,6 +21,9 @@ h3 {
 
 .carousel-inner img {
     border-radius: 10px;
+    width: 800px;  /* Defina a largura desejada */
+    height: 400px; /* Defina a altura desejada */
+    object-fit: cover; /* Garante que a imagem seja cortada para preencher as dimensões especificadas */
 }
 
 .carousel-caption {
