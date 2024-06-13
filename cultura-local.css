@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+#imagens-cultura img {
+    border-radius: 10px;
+}
