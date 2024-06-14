@@ -6,7 +6,7 @@
     <link rel="icon" href="galeria de fotos/bandeira.jpg">
     <title>Itália - Página Inicial</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="modificações.css">
+    <link rel="stylesheet" href="primeirapg.css">
 </head>
 <body>
     <header>
@@ -39,44 +39,69 @@
         </nav>
     </header>
     
-    <main>
-        <div class="container m-3">
-            <!-- Conteúdo da página inicial -->
-            <h1>Bem-vindo à Itália</h1>
-            <p>Prepare-se para uma jornada inesquecível pela Itália, uma terra repleta de história, cultura vibrante e gastronomia de tirar o fôlego. Situada no coração do Mediterrâneo, a Itália cativa seus visitantes com paisagens deslumbrantes, desde as majestosas montanhas dos Alpes até as pitorescas praias da Costa Amalfitana.</p>
-            <p>Ao explorar este país encantador, você será imerso em uma rica tapeçaria cultural, onde a antiga arquitetura romana se mistura com as obras-primas renascentistas e as charmosas vilas à beira do mar. Passeie pelas ruas de Roma e sinta a grandiosidade do Coliseu, maravilhe-se com a elegância de Florença e mergulhe na história em cada esquina de Veneza.</p>
-            <a href="pratos-tipicos.html" class="btn btn-primary">Conheça os pratos típicos</a> 
-
-        </div>
-        
-        <section id="destinos">
-
-            <h2>Destinos Emblemáticos</h2>
-            <a href="pratos-tipicos.html" class="btn btn-primary">Conheça os pratos típicos</a> 
+    <main class="container my-5">
+        <section id="intro" class="text-center mb-5">
+            <h2>Descubra a Itália</h2>
+            <p>A Itália é um país fascinante com uma rica herança cultural, paisagens deslumbrantes e uma culinária deliciosa. Conheça os pontos turísticos, aprenda sobre a cultura local e experimente os pratos típicos italianos.</p>
         </section>
 
-        <section id="culinaria">
-            <h2>Culinária Irresistível</h2>
-            <p>Desfrute da deliciosa culinária italiana:</p>
-            <ul>
-                <li>Pizza</li>
-                <li>Gelato</li>
-            </ul>
+        <section id="carrossel">
+            <div id="italiaCarrossel" class="carousel slide mb-5" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#italiaCarrossel" data-slide-to="0" class="active"></li>
+                    <li data-target="#italiaCarrossel" data-slide-to="1"></li>
+                    <li data-target="#italiaCarrossel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/1200x500" class="d-block w-100 carousel-img" alt="Pontos Turísticos">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Pontos Turísticos</h5>
+                            <p>Explore as maravilhas da Itália, desde o Coliseu em Roma até a Torre de Pisa.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/1200x500" class="d-block w-100 carousel-img" alt="Cultura Local">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cultura Local</h5>
+                            <p>Descubra a rica cultura italiana, suas tradições, festivais e muito mais.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/1200x500" class="d-block w-100 carousel-img" alt="Pratos Típicos">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Pratos Típicos</h5>
+                            <p>Saboreie os deliciosos pratos da culinária italiana, como pizza, pasta e tiramisu.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#italiaCarrossel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#italiaCarrossel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
         </section>
 
-        <section id="patrimonio">
-            <h2>Patrimônio Cultural</h2>
-            <p>Descubra a rica herança cultural da Itália:</p>
-            <ul>
-                <li>Arte renascentista</li>
-                <li>Arquitetura histórica</li>
-                <li>Música clássica</li>
-                <li>Ópera</li>
-                <li>Teatro</li>
-            </ul>
+        <section id="links" class="text-center">
+            <h2>Explore Mais</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="pratos-tipicos.html" class="btn btn-primary btn-lg btn-block">Pratos Típicos</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="cultura-local.html" class="btn btn-primary btn-lg btn-block">Cultura Local</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="destinos-turisticos.html" class="btn btn-primary btn-lg btn-block">Destinos Turísticos</a>
+                </div>
+            </div>
         </section>
     </main>
-
+    
     <footer class="bg-dark text-light py-3">
         <div class="container"><center>
             <div class="col-md-3 conteudo-rodape">
