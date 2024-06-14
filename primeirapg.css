@@ -33,6 +33,12 @@ p {
     font-size: 1.2em;
 }
 
+.carousel-caption-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .btn-lg {
     font-size: 1.5em;
     padding: 10px 20px;
