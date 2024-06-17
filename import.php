@@ -10,17 +10,13 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    if ($results) {
-        if (password_verify($_POST['password'], $results['password'])) {
-            $_SESSION['user_id'] = $results['id'];
-            $_SESSION['is_admin'] = $results['is_admin'];
-            header("Location: comments.php");
-            exit();
-        } else {
-            $message = 'Sorry, those credentials do not match (senha incorreta)';
-        }
+    if ($results && password_verify($_POST['password'], $results['password'])) {
+        $_SESSION['user_id'] = $results['id'];
+        $_SESSION['is_admin'] = $results['is_admin'];
+        header("Location: comments.php");
+        exit();
     } else {
-        $message = 'Sorry, those credentials do not match (email não encontrado)';
+        $message = 'Sorry, those credentials do not match';
     }
 }
 ?>
