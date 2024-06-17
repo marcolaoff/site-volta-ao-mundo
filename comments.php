@@ -72,7 +72,7 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
                         <a class="nav-link" href="pontos-turisticos.html">Pontos Turísticos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="comments.php">Comentários</a>
+                        <a class="nav-link"style="color: #008000;" href="comments.php">Comentários</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
