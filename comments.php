@@ -1,13 +1,17 @@
 <?php
+session_start();
 require 'config/database.php';
 
 $message = '';
 
-if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['comentario'])) {
+if (!empty($_POST['comentario'])) {
+    $nome = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : $_POST['nome'];
+    $email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : $_POST['email'];
+
     // Inserir o comentário diretamente no banco de dados com status "pending"
     $stmt = $pdo->prepare('INSERT INTO comments (nome, email, comentario, status) VALUES (:nome, :email, :comentario, "pending")');
-    $stmt->bindParam(':nome', $_POST['nome']);
-    $stmt->bindParam(':email', $_POST['email']);
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':comentario', $_POST['comentario']);
     if ($stmt->execute()) {
         $message = 'Comentário enviado com sucesso';
@@ -16,7 +20,7 @@ if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['comentar
     }
 }
 
-$comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comments WHERE status = "approved" ORDER BY created_at DESC')->fetchAll(PDO::FETCH_ASSOC);
+$comments = $pdo->query('SELECT nome, comentario, created_at FROM comments WHERE status = "approved" ORDER BY created_at DESC')->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +48,19 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
         }
         .comment {
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding: 10px;
             border-bottom: 1px solid #e9ecef;
+        }
+        .comment p {
+            margin: 0;
+        }
+        .comment .comment-info {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        .comment .comment-date {
+            font-size: 0.8em;
+            color: #999;
         }
     </style>
 </head>
@@ -56,7 +71,7 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -72,13 +87,24 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
                         <a class="nav-link" href="pontos-turisticos.html">Pontos Turísticos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"style="color: #008000;" href="comments.php">Comentários</a>
+                        <a class="nav-link" style="color: #008000; href="comments.php">Comentários</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.php">Painel</a>
-                    </li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php if ($_SESSION['is_admin']): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.php">Painel</a>
+                            </li>
+                        <?php endif; ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logoff</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </nav>
@@ -88,14 +114,18 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
         <h1 class="mt-5">Comentários</h1>
         <div class="comment-form">
             <form action="comments.php" method="POST">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
-                </div>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
+                    </div>
+                <?php else: ?>
+                    <p><strong>Comentando como: <?= $_SESSION['user_name']; ?> (<?= $_SESSION['user_email']; ?>)</strong></p>
+                <?php endif; ?>
                 <div class="form-group">
                     <label for="comentario">Comentário:</label>
                     <textarea name="comentario" class="form-control" placeholder="Escreva seu comentário aqui" required></textarea>
@@ -109,7 +139,8 @@ $comments = $pdo->query('SELECT nome, email, comentario, created_at FROM comment
         <div class="comment-section">
             <?php foreach ($comments as $comment): ?>
                 <div class="comment">
-                    <p><strong><?= htmlspecialchars($comment['nome']); ?>:</strong> <?= htmlspecialchars($comment['comentario']); ?> <em>(<?= $comment['created_at']; ?>)</em></p>
+                    <p><strong><?= htmlspecialchars($comment['nome']); ?>:</strong> <?= htmlspecialchars($comment['comentario']); ?></p>
+                    <p class="comment-date"><?= date('d M Y, H:i', strtotime($comment['created_at'])); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

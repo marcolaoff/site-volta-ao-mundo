@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare('SELECT id, nome, password FROM users WHERE email = :email');
+    $stmt = $pdo->prepare('SELECT id, nome, email, password, is_admin FROM users WHERE email = :email');
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -14,7 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['nome'];
-        header("Location: admin.php");
+        $_SESSION['user_email'] = $user['email'];
+        $_SESSION['is_admin'] = $user['is_admin'];
+        header("Location: comments.php");
         exit();
     } else {
         $error = 'Sorry, those credentials do not match';
@@ -84,13 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Senha</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <p class="link">Not registered? <a href="register.php">Create an account</a></p>
-        <p class="link"><a href="primeirapg.html">Voltar para o Site</a></p>
+        <p class="link">Not registered? <a href="register.php">Crie sua conta aqui!</a></p>
+        <p class="link"><a href="primeirapg.html">Volte para o site inicial</a></p>
     </div>
 </body>
 </html>
