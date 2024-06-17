@@ -28,6 +28,7 @@ $comments = $pdo->query('SELECT nome, comentario, created_at FROM comments WHERE
 <head>
     <meta charset="UTF-8">
     <title>Comentários</title>
+    <link rel="icon" href="galeria de fotos/bandeira.jpg">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>

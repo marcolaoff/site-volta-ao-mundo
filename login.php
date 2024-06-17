@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: comments.php");
         exit();
     } else {
-        $error = 'Sorry, those credentials do not match';
+        $error = 'Desculpe, credenciais incorretas';
     }
 }
 ?>
