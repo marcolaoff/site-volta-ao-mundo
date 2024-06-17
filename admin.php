@@ -40,15 +40,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $json_data = file_get_contents($file);
             $comments = json_decode($json_data, true);
 
-            foreach ($comments as $comment) {
-                $stmt = $pdo->prepare('INSERT INTO comments (nome, email, comentario, status) VALUES (:nome, :email, :comentario, :status)');
-                $stmt->bindParam(':nome', $comment['nome']);
-                $stmt->bindParam(':email', $comment['email']);
-                $stmt->bindParam(':comentario', $comment['comentario']);
-                $stmt->bindParam(':status', $comment['status']);
-                $stmt->execute();
+            if ($comments !== null) {
+                foreach ($comments as $comment) {
+                    $status = isset($comment['status']) ? $comment['status'] : 'pending';
+                    $stmt = $pdo->prepare('INSERT INTO comments (nome, email, comentario, status) VALUES (:nome, :email, :comentario, :status)');
+                    $stmt->bindParam(':nome', $comment['nome']);
+                    $stmt->bindParam(':email', $comment['email']);
+                    $stmt->bindParam(':comentario', $comment['comentario']);
+                    $stmt->bindParam(':status', $status);
+                    $stmt->execute();
+                }
+                $importMessage = 'Comentários importados com sucesso';
+            } else {
+                $importMessage = 'Erro ao decodificar o arquivo JSON';
             }
-            $importMessage = 'Comentários importados com sucesso';
+        } else {
+            $importMessage = 'Erro ao importar comentários';
         }
     } elseif (isset($_POST['approve_all'])) {
         $stmt = $pdo->prepare('UPDATE comments SET status = "approved" WHERE status != "approved"');
@@ -59,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
         $importMessage = 'Todos os comentários foram rejeitados.';
     } elseif (isset($_POST['delete_all'])) {
-        $stmt = $pdo->prepare('DELETE FROM comments');
+        $stmt = $pdo->prepare('DELETE FROM comments WHERE id IS NOT NULL');
         $stmt->execute();
         $importMessage = 'Todos os comentários foram excluídos.';
     }
@@ -77,7 +84,7 @@ if (isset($_GET['importMessage'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <title>Painel do Administrador</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -162,17 +169,17 @@ if (isset($_GET['importMessage'])) {
     </header>
 
     <div class="container">
-        <h1 class="mt-5">Admin Panel</h1>
-        <h2>Manage Comments</h2>
+        <h1 class="mt-5">Painel do Administrador</h1>
+        <h2>Administrar Comentários</h2>
         <div class="action-buttons mb-4">
             <form action="admin.php" method="POST" class="d-inline">
-                <button type="submit" name="approve_all" class="btn btn-success">Approve All</button>
+                <button type="submit" name="approve_all" class="btn btn-success">Aprovar Todos</button>
             </form>
             <form action="admin.php" method="POST" class="d-inline">
-                <button type="submit" name="reject_all" class="btn btn-warning">Reject All</button>
+                <button type="submit" name="reject_all" class="btn btn-warning">Rejeitar Todos</button>
             </form>
             <form action="admin.php" method="POST" class="d-inline">
-                <button type="submit" name="delete_all" class="btn btn-danger">Delete All</button>
+                <button type="submit" name="delete_all" class="btn btn-danger">Apagar todos</button>
             </form>
         </div>
         <?php if ($importMessage): ?>
@@ -184,9 +191,9 @@ if (isset($_GET['importMessage'])) {
         <h2>Importar Comentários JSON</h2>
         <div class="import-json">
             <form action="admin.php" method="POST" enctype="multipart/form-data" class="form-inline">
-                <label for="json_file" class="btn btn-primary">Choose JSON File</label>
+                <label for="json_file" class="btn btn-primary">Escolher arquivo JSON</label>
                 <input type="file" id="json_file" name="json_file" required>
-                <button type="submit" name="import" class="btn btn-success ml-2">Import Comments</button>
+                <button type="submit" name="import" class="btn btn-success ml-2">Importar Comentários</button>
             </form>
         </div>
 
@@ -196,9 +203,9 @@ if (isset($_GET['importMessage'])) {
                     <p><strong><?= htmlspecialchars($comment['nome']); ?>:</strong> <?= htmlspecialchars($comment['comentario']); ?> <em>(<?= $comment['created_at']; ?>)</em> - Status: <?= htmlspecialchars($comment['status']); ?></p>
                     <form action="admin.php" method="POST" style="display:inline;">
                         <input type="hidden" name="comment_id" value="<?= $comment['id']; ?>">
-                        <input type="submit" name="approve" class="btn btn-success btn-sm" value="Approve">
-                        <input type="submit" name="reject" class="btn btn-warning btn-sm" value="Reject">
-                        <input type="submit" name="delete" class="btn btn-danger btn-sm" value="Delete">
+                        <input type="submit" name="approve" class="btn btn-success btn-sm" value="Aprovar">
+                        <input type="submit" name="reject" class="btn btn-warning btn-sm" value="Rejeitar">
+                        <input type="submit" name="delete" class="btn btn-danger btn-sm" value="Apagar">
                     </form>
                 </div>
             <?php endforeach; ?>
@@ -207,6 +214,6 @@ if (isset($_GET['importMessage'])) {
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

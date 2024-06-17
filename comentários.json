@@ -1,62 +1,58 @@
 [
     {
-        "nome": "João Silva",
-        "email": "joao.silva@example.com",
-        "comentario": "Adorei a cultura italiana!",
+        "nome": "Maria",
+        "email": "maria@example.com",
+        "comentario": "Ótimo site sobre a Itália!",
         "status": "approved"
     },
     {
-        "nome": "Maria Oliveira",
-        "email": "maria.oliveira@example.com",
-        "comentario": "A comida da Itália é simplesmente fantástica.",
+        "nome": "José",
+        "email": "jose@example.com",
+        "comentario": "Adorei as dicas de culinária.",
+        "status": "pending"
+    },
+    {
+        "nome": "Ana",
+        "email": "ana@example.com",
+        "comentario": "As fotos dos pontos turísticos são incríveis."
+    },
+    {
+        "nome": "Carlos",
+        "email": "carlos@example.com",
+        "comentario": "Gostaria de saber mais sobre a cultura local."
+    },
+    {
+        "nome": "Beatriz",
+        "email": "beatriz@example.com",
+        "comentario": "Muito bom o conteúdo sobre os pratos típicos.",
+        "status": "rejected"
+    },
+    {
+        "nome": "Fernanda",
+        "email": "fernanda@example.com",
+        "comentario": "O site é muito informativo!",
+        "status": "pending"
+    },
+    {
+        "nome": "Rafael",
+        "email": "rafael@example.com",
+        "comentario": "Adorei o design do site.",
         "status": "approved"
     },
     {
-        "nome": "Carlos Souza",
-        "email": "carlos.souza@example.com",
-        "comentario": "Gostei muito das paisagens!",
-        "status": "approved"
+        "nome": "Lucas",
+        "email": "lucas@example.com",
+        "comentario": "Quero visitar a Itália depois de ver esse site."
     },
     {
-        "nome": "Ana Pereira",
-        "email": "ana.pereira@example.com",
-        "comentario": "Os pontos turísticos são maravilhosos.",
-        "status": "approved"
+        "nome": "Gabriela",
+        "email": "gabriela@example.com",
+        "comentario": "Muito legal as curiosidades sobre o Coliseu."
     },
     {
-        "nome": "Pedro Santos",
-        "email": "pedro.santos@example.com",
-        "comentario": "Quero muito visitar a Itália.",
-        "status": "approved"
-    },
-    {
-        "nome": "Laura Martins",
-        "email": "laura.martins@example.com",
-        "comentario": "A cultura e a história são incríveis.",
-        "status": "approved"
-    },
-    {
-        "nome": "Lucas Costa",
-        "email": "lucas.costa@example.com",
-        "comentario": "Gostei das dicas sobre a culinária.",
-        "status": "approved"
-    },
-    {
-        "nome": "Julia Fernandes",
-        "email": "julia.fernandes@example.com",
-        "comentario": "As tradições italianas são fascinantes.",
-        "status": "approved"
-    },
-    {
-        "nome": "Ricardo Almeida",
-        "email": "ricardo.almeida@example.com",
-        "comentario": "Visitar a Itália é um sonho que quero realizar.",
-        "status": "approved"
-    },
-    {
-        "nome": "Fernanda Lima",
-        "email": "fernanda.lima@example.com",
-        "comentario": "Adorei aprender mais sobre a cultura local.",
+        "nome": "Mariana",
+        "email": "mariana@example.com",
+        "comentario": "As informações sobre o Vaticano são bem detalhadas.",
         "status": "approved"
     }
 ]
