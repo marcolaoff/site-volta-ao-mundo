@@ -47,4 +47,4 @@ Este projeto é um site sobre a Itália, desenvolvido como parte da matéria de 
 
 ## Contribuidores
 
-`[Marco Antônio](https://github.com/marcolaoff)`
+[Marco Antônio](https://github.com/marcolaoff)
